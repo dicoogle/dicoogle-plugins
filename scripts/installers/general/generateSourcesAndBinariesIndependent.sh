@@ -27,7 +27,7 @@ mkdir -p $DICOOGLE_BIN/Plugins
 
 echo "Clonning Dicoogle from github"
 git clone -b master git@github.com:bioinformatics-ua/dicoogle.git
-git clone -b master git@github.com:bioinformatics-ua/dicoogle-pvt.git dicoogle-pvt
+git clone -b main git@github.com:dicoogle/dicoogle-plugins.git dicoogle-pvt
 
 echo "Compiling core..."
 
