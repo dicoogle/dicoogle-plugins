@@ -25,5 +25,7 @@
     <modules>
         <module>plugins/filestorage</module>
         <module>plugins/lucene</module>
+        <module>plugins/dicom-web</module>
+
     </modules>
 </project>
