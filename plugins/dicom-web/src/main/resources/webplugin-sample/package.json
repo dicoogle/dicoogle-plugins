@@ -1,0 +1,71 @@
+{
+  "name": "dicoogle-healthcheck",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Example web UI plugin for Dicoogle",
+  "maintainers": [
+    "Luís A. Bastião Silva <bastiao@bmd-software.com>",
+    "Eduardo Pinho <eduardopinho@bmd-software.com>"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "bioinformatics-ua/dicoogle-plugin-sample"
+  },
+  "keywords": [
+    "dicoogle",
+    "dicoogle-plugin"
+  ],
+  "dicoogle": {
+    "slot-id": "menu",
+    "caption": "Health Check",
+    "module-file": "module.js"
+  },
+  "engines": {
+    "node": ">=16",
+    "npm": ">=7"
+  },
+  "source": "src/index.js",
+  "main": "dist/module.js",
+  "files": [
+    "dist/module.js"
+  ],
+  "scripts": {
+    "build": "node build-package-json.js && parcel build --no-source-maps",
+    "build-debug": "node build-package-json.js && parcel build --no-optimize",
+    "build-watch": "node build-package-json.js && parcel watch --no-optimize",
+    "prepare": "npm run build"
+  },
+  "targets": {
+    "main": {
+      "context": "browser",
+      "outputFormat": "commonjs",
+      "isLibrary": false,
+      "includeNodeModules": {
+        "@swc/helpers": true,
+        "react": false,
+        "react-dom": false,
+        "dicoogle-client": false,
+        "dicoogle-webcore": false,
+        "reflux": false,
+        "react-bootstrap": false,
+        "react-bootstrap-table": false,
+        "react-router": false,
+        "react-router-bootstrap": false
+      },
+      "optimize": true,
+      "sourceMap": {
+        "inline": true
+      },
+      "engines": {
+        "browsers": "> 1%, last 2 versions, not dead"
+      }
+    }
+  },
+  "devDependencies": {
+    "parcel": "^2.13.3"
+  },
+  "dependencies": {
+    "dicoogle-client": "~5.2.0"
+  }
+}
