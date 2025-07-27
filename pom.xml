@@ -1,27 +1,97 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>pt.ua.ieeta</groupId>
-  <artifactId>dicoogle-plugins</artifactId>
-  <version>3.4.1</version>
-  <packaging>pom</packaging>
-  <name>dicoogle-plugins</name>
-  <properties>
-        <dicoogle-sdk.version>3.3.3</dicoogle-sdk.version>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>pt.ua.ieeta</groupId>
+    <artifactId>dicoogle-plugins</artifactId>
+    <version>3.4.1</version>
+    <packaging>pom</packaging>
+    <name>dicoogle-plugins</name>
+    <url>https://dicoogle.com</url>
+
+    <properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <dicoogle-sdk.version>3.4.1</dicoogle-sdk.version>
     </properties>
+
+	<repositories>
+		<repository>
+			<id>dcm4che</id>
+			<url>https://www.dcm4che.org/maven2/</url>
+		</repository>
+		<repository>
+			<id>dicoogle-public</id>
+			<url>https://dev.bmd-software.com/nexus/content/repositories/dicoogle-public</url>
+		</repository>
+	</repositories>
+
     <build>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>2.3.2</version>
+                <version>3.14.0</version>
                 <configuration>
-                    <source>1.7</source>
-                    <target>1.7</target>
+                    <release>8</release>
                 </configuration>
             </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.6.0</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <filters>
+                                <filter>
+                                    <artifact>*:*</artifact>
+                                    <excludes>
+                                        <exclude>**/*.SF</exclude>
+                                        <exclude>**/*.DSA</exclude>
+                                        <exclude>**/*.RSA</exclude>
+                                        <exclude>**/module-info.class</exclude>
+                                        <exclude>**/module-info.java</exclude>
+                                        <exclude>META-INF/versions/**/*.class</exclude>
+                                        <exclude>META-INF/DEPENDENCIES</exclude>
+                                    </excludes>
+                                </filter>
+                            </filters>
+                            <minimizeJar>false</minimizeJar>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>com.mycila</groupId>
+                <artifactId>license-maven-plugin</artifactId>
+                <version>2.9</version>
+                <configuration>
+                    <header>short-license.txt</header>
+                    <includes>
+                        <include>**/*.java</include>
+                    </includes>
+                    <excludes>
+                        <exclude>tools/**</exclude>
+                        <exclude>**/package-info.java</exclude>
+                    </excludes>
+                </configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>check</goal>
+						</goals>
+					</execution>
+				</executions>
+            </plugin>            
         </plugins>
     </build>
+
     <modules>
         <module>plugins/filestorage</module>
         <module>plugins/lucene</module>

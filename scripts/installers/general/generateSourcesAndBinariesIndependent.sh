@@ -73,9 +73,9 @@ echo "#######################"
 #Binaries
 cp dicoogle/dicoogle/target/dicoogle.jar $DICOOGLE_BIN/
 cp dicoogle/README.md $DICOOGLE_BIN/
-cp dicoogle-pvt/plugins/lucene/target/lucene-$VERSION.jar $DICOOGLE_BIN/Plugins
-cp dicoogle-pvt/plugins/filestorage/target/filestorage-$VERSION-jar-with-dependencies.jar $DICOOGLE_BIN/Plugins
-cp ../bin/* $DICOOGLE_BIN/
+cp "dicoogle-pvt/plugins/lucene/target/lucene-$VERSION.jar" "$DICOOGLE_BIN/Plugins/"
+cp "dicoogle-pvt/plugins/filestorage/target/filestorage-$VERSION.jar" "$DICOOGLE_BIN/Plugins/"
+cp ../bin/* "$DICOOGLE_BIN/"
 
 echo "Zipping..."
 
@@ -84,7 +84,7 @@ zip -9 -r $DICOOGLE_BIN.zip $DICOOGLE_BIN
 echo "Zipping...done"
 #Sources
 
-echo "Cleaning ..."
+#echo "Cleaning ..."
 
 #rm -rf dicoogle-pvt
 #rm -rf dicoogle
