@@ -7,12 +7,12 @@
 	<version>3.4.1</version>
 	<packaging>jar</packaging>
 
-    <parent>
-        <groupId>pt.ua.ieeta</groupId>
-        <artifactId>dicoogle-plugins</artifactId>
-        <version>3.4.1</version>
-        <relativePath>../../pom.xml</relativePath>
-    </parent>
+	<parent>
+		<groupId>pt.ua.ieeta</groupId>
+		<artifactId>dicoogle-plugins</artifactId>
+		<version>3.4.1</version>
+		<relativePath>../../pom.xml</relativePath>
+	</parent>
 
 	<name>lucene</name>
 	<url>https://dicoogle.com</url>

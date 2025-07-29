@@ -9,17 +9,17 @@
 
 	<name>filestorage</name>
 	<url>https://dicoogle.com</url>
-    
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
+	
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
 
-    <parent>
-        <groupId>pt.ua.ieeta</groupId>
-        <artifactId>dicoogle-plugins</artifactId>
-        <version>3.4.1</version>
-        <relativePath>../../pom.xml</relativePath>
-    </parent>
+	<parent>
+		<groupId>pt.ua.ieeta</groupId>
+		<artifactId>dicoogle-plugins</artifactId>
+		<version>3.4.1</version>
+		<relativePath>../../pom.xml</relativePath>
+	</parent>
 
 	<build>
 		<plugins>
