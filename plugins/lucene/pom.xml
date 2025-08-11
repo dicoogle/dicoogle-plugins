@@ -4,13 +4,13 @@
 
 	<groupId>pt.ua.ieeta</groupId>
 	<artifactId>lucene</artifactId>
-	<version>3.4.1</version>
+	<version>3.5.0</version>
 	<packaging>jar</packaging>
 
 	<parent>
 		<groupId>pt.ua.ieeta</groupId>
 		<artifactId>dicoogle-plugins</artifactId>
-		<version>3.4.1</version>
+		<version>3.5.0</version>
 		<relativePath>../../pom.xml</relativePath>
 	</parent>
 
