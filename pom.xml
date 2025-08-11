@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>pt.ua.ieeta</groupId>
 	<artifactId>dicoogle-plugins</artifactId>
-	<version>3.5.0</version>
+	<version>3.5.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>dicoogle-plugins</name>
 	<url>https://dicoogle.com</url>
